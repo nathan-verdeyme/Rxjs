@@ -1,0 +1,8 @@
+
+<router-outlet>
+<h3>Nos plats</h3>
+<ul *ngFor="let dish of dish$ | async">
+
+    <li><a href="carte/plat/{{dish}}">{{ dish }}</a></li>
+</ul>
+</router-outlet>

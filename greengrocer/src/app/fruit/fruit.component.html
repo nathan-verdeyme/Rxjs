@@ -1,0 +1,28 @@
+<p>fruit works!</p>
+
+<ul *ngFor="let fruit of fruitList | async">
+<dl>
+    <ul type="disc">
+    <li>id :</li>
+        
+               
+    </ul> 
+        <ol> {{ fruit.id }}</ol>
+    <dt>nom : </dt>
+        <dd>{{ fruit.name }}</dd>
+    <dt>prix : </dt>
+        <dd>{{ fruit.price }}</dd>
+</dl>
+</ul>
+
+
+<h4>Creation d'un fruit </h4>
+<p>
+<label for="id">Identifiant : </label>
+</p>
+<p>
+    <label for="name">Nom : </label>
+</p>
+<p>
+        <label for="price">Prix : </label>
+</p>

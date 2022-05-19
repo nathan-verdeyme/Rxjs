@@ -1,0 +1,6 @@
+<div *ngIf="selectedDishName$ | async as dishName"><h4>{{dishName}}</h4>
+</div>
+<ul *ngIf="dis$ | async as dis">
+        <p>description: {{dis.description}}</p>
+        <p>prix : {{dis.prix}}</p>
+</ul>

@@ -1,0 +1,13 @@
+<h1>Liste des offres d'emploi</h1>
+<div *ngIf="selectedJobID$ | async as selectedJobID"></div>
+<ul *ngFor="let job of jobs | async">
+    <dl>
+        <ul type="disc">
+        <b><li>{{ job.Title }} - {{ job.DateOfPublish }}</li></b>              
+    </ul>
+        <dd> {{ job.Description }}</dd>
+        <dd> {{ job.Salary }}</dd>
+    </dl>
+</ul>
+
+

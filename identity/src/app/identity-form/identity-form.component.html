@@ -1,0 +1,62 @@
+<form [formGroup]="identityGroup" (ngSubmit)="onSubmit()">
+<p>
+    <label for="firstname">Prénom : </label>
+<input type="text" id="firstname" [formControl]="firstname"> Prénom entré : {{inputFirstname$ | async}}
+</p> 
+<p>
+    <label for="lastname">Nom : </label>
+    <input type="text" id="lastname" [formControl]="lastname">Nom entré : {{lastname.status}}
+    <strong *ngIf="lastname.hasError('required')">
+        Le nom de famille est requis
+      
+    </strong>
+
+</p>
+
+<div [formGroup]="addressGroup">
+    <p>
+        <label for="street">Rue : </label>
+        <input type="text" id="street" formControlName="street">
+    </p>
+    <p>
+        <label for="zip">Code postal : </label>
+        <input type="text" id="zip" formControlName="zip">Code postal : {{zip.status}}
+        <strong *ngIf="addressGroup.get('zip')?.hasError('pattern')">
+            Code postal mal formé
+        </strong>
+    
+    </p>
+    
+    <p>
+        <label for="city">Ville : </label>
+        <input type="text" id="city" formControlName="city">Ville entré : {{city.value}}
+    </p>
+ 
+    <p>
+        <label for="country">Country : </label>
+            <select id="country" fromControlName="country">
+                <option *ngFor="let country of countryList" [ngValue]="country">
+                    {{country}}
+                </option>
+            </select>
+    </p>
+</div>
+    
+    
+
+
+
+
+
+
+
+
+    <button type="submit">Valider</button>
+</form>
+
+<h3>Valeur du groupe de l'adresse</h3> {{addressGroup.value | json }}
+<h3>Historique des prénoms saisis</h3>
+<ol *ngFor="let tab of historiqueSaisi "> 
+    
+    <li>{{tab}}</li>
+</ol>

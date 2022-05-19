@@ -1,0 +1,17 @@
+<h1>Nos livres</h1>
+<ul *ngFor="let book of book$ | async">
+<dl>
+    <ul type="disc">
+    <li>titre :</li>
+        
+               
+    </ul> 
+        <ol> {{ book.title }}</ol>
+    <dt>auteur : </dt>
+        <dd>{{ book.author }}</dd>
+    <dt>year : </dt>
+        <dd>{{ book.year }}</dd>
+</dl>
+</ul>
+
+

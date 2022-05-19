@@ -1,0 +1,38 @@
+<h1>Ajouter un job à notre site.</h1>
+<form [formGroup]="titleGroup" (ngSubmit)="onSubmit()">
+<div [formGroup]="titleGroup">
+    <p>
+        <label for="Title"> Titre : </label>
+        <input type="text" id="Title" formControlName="Title">
+        <strong *ngIf="Title.hasError('required')">
+            Le titre est requis.
+          
+        </strong>
+        
+        
+    </p>
+    <p>
+        <label for="Description"> Description : </label>
+        <input type="text" id="Description" formControlName="Description">
+        <strong *ngIf="Description.hasError('required')">
+            La description est requise.
+        </strong>
+    </p>
+   
+    <p>
+    <label for="DateOfPublish">Date de publication</label>
+
+<input type="Date" id="DateOfPublish" name="DateOfPublish" formControlName="DateOfPublish">
+    </p>
+    <p>
+        <label for="Salary"> Salary : </label>
+        <input type="text" id="Salary" formControlName="Salary">
+        </p>
+        <p>
+            <label for="Location"> Location : </label>
+            <input type="text" id="Location" formControlName="Location">
+            </p>
+        </div>
+        
+    <button type="submit" >Créer un job</button>
+</form>

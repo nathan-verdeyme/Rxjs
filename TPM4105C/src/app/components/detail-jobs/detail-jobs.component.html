@@ -1,0 +1,10 @@
+<h1>Detail du job</h1>
+<ul *ngFor="let job of jobs | async">
+    <dl>
+        <ul type="disc">
+        <b><li><a href="/{{id}}">{{ job.Title }} </a> - {{ job.DateOfPublish }}</li></b>              
+    </ul>
+        <dd> {{ job.Description }}</dd>
+        <dd> {{ job.Salary }}</dd>
+    </dl>
+</ul>
